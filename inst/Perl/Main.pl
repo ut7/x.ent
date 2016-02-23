@@ -65,9 +65,8 @@ my %TYPE_GET= ();
 #check file est existant
 if ( length( $FILE_EVAL || '')) {
    if(!(-e $FILE_EVAL)){
-      print "File evaluation does not exist, please check your configuration!";
-     	exit;
-	  }
+      die "File evaluation does not exist, please check your configuration!";
+    }
 }
 my $out_dir = dirname($FILE_OUTPUT);
 if(!(-d $out_dir))
